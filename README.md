@@ -1,12 +1,23 @@
 # Cat Gallery Image Selector
 This is a sample app which uses cat library as a gallery app for selecting cat image.
 
-#Tools and devices
+# Completed
+1. API call to fetch the data.
+2. Added custom action bar via material design toolbar which allows customization of drawable for back button, title, background color. 
+   Additional custom actionbar is created which can be used instead of material design toolbar.
+3. On tapping of any cat image, image path is shared to calling activity and image is loaded empty view present. 
+4. Adapter uses data binding. 
+5. Added pagination.
+6. Given option switching between list and grid layout.
+7. UI test case (which will run if internet is available as no dummy cached data is used). 
+8. Generic error handling is done incase of network issue.
+
+# Tools and devices
 1. Android studio
 2. Emulator Nexus 5X API 30
 3. Emulator Pixel XL 4 API 30
 
-#This project includes 
+# This project includes 
 1. MVVM architecture
 2. Retrofit
 3. Coroutines
@@ -15,13 +26,7 @@ This is a sample app which uses cat library as a gallery app for selecting cat i
 6. Live data
 7. Glide
 
-#Note
-1. Adapter uses data binding. 
-2. Added pagination.
-3. Given option switching between list and grid layout.
-4. UI test case will run if internet is available.
-
-#Enhancement
+# Enhancement
 1. Can add configuration structure. Also data caching can be added.
 2. Can pass base url from host app via configuration. 
 3. Used activity for getting image from cat library. 

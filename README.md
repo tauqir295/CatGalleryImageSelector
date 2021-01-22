@@ -29,7 +29,6 @@ This is a sample app which uses cat library as a gallery app for selecting cat i
 # Enhancement
 1. Can add configuration structure. Also data caching can be added.
 2. Can pass base url from host app via configuration. 
-3. Used activity for getting image from cat library. 
-   We can use sharedViewModel for sharing data from cat library.
-4. Use security protocols 
+3. We can use sharedViewModel for sharing data from cat library instead of activity.
+4. Use security protocols. 
 5. Minor bug fixes and ui changes can be scope for future changes.

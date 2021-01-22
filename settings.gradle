@@ -1,0 +1,3 @@
+include ':cat-gallery'
+include ':app'
+rootProject.name = "CatGalleryImageSelector"

@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 fun loadImage(view: ImageView, url: String?) {
     Glide.with(view.context)
         .load(url)
+        .fitCenter()
         .placeholder(R.drawable.placeholder_image)
         .into(view)
 }

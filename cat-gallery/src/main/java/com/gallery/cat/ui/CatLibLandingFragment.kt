@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.switchmaterial.SwitchMaterial
 import com.gallery.cat.R
 import com.gallery.cat.databinding.LandingFragmentBinding
 import com.gallery.cat.network.model.Cat
@@ -22,6 +21,8 @@ import com.gallery.cat.ui.adapter.LoadMoreListener
 import com.gallery.cat.utils.CAT_URL
 import com.gallery.cat.utils.Logger
 import com.gallery.cat.utils.Status
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.switchmaterial.SwitchMaterial
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -118,7 +119,7 @@ class CatLibLandingFragment : Fragment(),
                     //Handle Error
                     Logger.d("LandingFragment ERROR", it.message.toString())
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
+                    handleAPIFail()
 
                 }
             }
@@ -172,5 +173,21 @@ class CatLibLandingFragment : Fragment(),
             // fetching only fewer elements inorder to manage the data consumption for load more only
             viewModelCatLib.fetchCatList(9, pageCount++)
         }
+    }
+
+
+    /**
+     * handing API failed case by showing alert dialog
+     */
+    private fun handleAPIFail() {
+        AlertDialog.Builder(requireContext())
+            .setTitle(getString(R.string.api_failed))
+            .setMessage(getString(R.string.something_went_wrong))
+            .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
+                dialog.dismiss()
+                requireActivity().onBackPressed()
+            }
+            .setCancelable(false)
+            .show()
     }
 }

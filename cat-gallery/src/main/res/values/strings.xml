@@ -3,4 +3,7 @@
     <string name="list">Default view is list.</string>
     <string name="grid">Switch to grid</string>
     <string name="no_data_found">No data found</string>
+    <string name="api_failed">API Failed</string>
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="ok">OK</string>
 </resources>

@@ -41,6 +41,8 @@ class CatLibLandingFragment : Fragment(),
 
     companion object {
         fun newInstance() = CatLibLandingFragment()
+        const val GRID_ROW_ITEMS_COUNT = 3
+        const val LIST_ROW_ITEMS_COUNT = 1
     }
 
     override fun onCreateView(
@@ -74,17 +76,17 @@ class CatLibLandingFragment : Fragment(),
 
         setupObserver()
 
-        requireActivity().let {
-            it.findViewById<MaterialToolbar>(R.id.topAppBar).setNavigationOnClickListener {_->
+        requireActivity().run {
+            findViewById<MaterialToolbar>(R.id.topAppBar).setNavigationOnClickListener {_->
                 // Handle navigation icon press
-                it.onBackPressed()
+                onBackPressed()
             }
 
-            it.findViewById<SwitchMaterial>(R.id.switchButton).setOnCheckedChangeListener { _, isChecked: Boolean ->
+            findViewById<SwitchMaterial>(R.id.switchButton).setOnCheckedChangeListener { _, isChecked: Boolean ->
                 switchBetweenGridListLayout(if (isChecked) {
-                    3
+                    GRID_ROW_ITEMS_COUNT
                 } else {
-                    1
+                    LIST_ROW_ITEMS_COUNT
                 })
             }
         }

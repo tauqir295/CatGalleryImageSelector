@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 
 @InstallIn(ApplicationComponent::class)
 @Module
-object CustomModule {
+object CatLibModule {
 
     @Provides
     fun provideOkHttpClient(): OkHttpClient {

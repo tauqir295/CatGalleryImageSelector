@@ -56,8 +56,9 @@ class CatRecyclerViewAdapter(private val layoutManager: GridLayoutManager) : Rec
      * @param: [list] - used to populate the adapter items
      */
     fun updateCatList(list: List<Cat>) {
+        val catListSize = catList.size
         catList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemRangeChanged(catListSize, catList.size)
     }
 
     /**

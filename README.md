@@ -1,7 +1,7 @@
 # Cat Gallery Image Selector
 This is a sample app which uses cat library as a gallery app for selecting cat image.
 
-# Completed
+# In scope
 1. API call to fetch the data.
 2. Added custom action bar via material design toolbar which allows customization of drawable for back button, title, background color. 
    Additional custom actionbar is created which can be used instead of material design toolbar.
@@ -26,9 +26,9 @@ This is a sample app which uses cat library as a gallery app for selecting cat i
 6. Live data
 7. Glide
 
-# Enhancement
-1. Can add configuration structure. Also data caching can be added.
-2. Can pass base url from host app via configuration. 
+# TODO
+1. Add configuration structure. Also data caching can be added.
+2. Pass base url from host app via configuration. 
 3. We can use sharedViewModel for sharing data from cat library instead of activity.
 4. Use security protocols. 
 5. Minor bug fixes and ui changes can be scope for future changes.
